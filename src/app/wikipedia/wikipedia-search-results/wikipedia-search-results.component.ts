@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-wikipedia-search-results',
-  templateUrl: './wikipedia-search-results.component.html',
-  styleUrls: ['./wikipedia-search-results.component.css']
+  template: `
+    <p>
+      wikipedia-search-results works!
+    </p>
+  `
 })
-export class WikipediaSearchResultsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class WikipediaSearchResultsComponent {
+  @Input()
+  searchResults: Array<WikipediaSearchResults> = [];
 }

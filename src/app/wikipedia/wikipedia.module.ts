@@ -4,6 +4,7 @@ import {WikipediaSearchComponent} from './wikipedia-search/wikipedia-search.comp
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {WikipediaSearchResultsComponent} from './wikipedia-search-results/wikipedia-search-results.component';
 import {MatFormFieldModule, MatIconModule, MatInputModule} from '@angular/material';
+import { WikipediaContainerComponent } from './wikipedia-container/wikipedia-container.component';
 
 @NgModule({
   imports: [
@@ -14,8 +15,8 @@ import {MatFormFieldModule, MatIconModule, MatInputModule} from '@angular/materi
     MatFormFieldModule
   ],
   exports: [
-    WikipediaSearchComponent
+    WikipediaContainerComponent
   ],
-  declarations: [WikipediaSearchComponent, WikipediaSearchResultsComponent]
+  declarations: [WikipediaSearchComponent, WikipediaSearchResultsComponent, WikipediaContainerComponent]
 })
 export class WikipediaModule { }
