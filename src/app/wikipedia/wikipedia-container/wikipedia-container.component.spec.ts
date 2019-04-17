@@ -1,6 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { WikipediaContainerComponent } from './wikipedia-container.component';
+import {WikipediaContainerComponent} from './wikipedia-container.component';
+import {MockComponent} from 'ng-mocks';
+import {WikipediaSearchComponent} from '../wikipedia-search/wikipedia-search.component';
+import {WikipediaSearchResultsComponent} from '../wikipedia-search-results/wikipedia-search-results.component';
 
 describe('WikipediaContainerComponent', () => {
   let component: WikipediaContainerComponent;
@@ -8,7 +11,11 @@ describe('WikipediaContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WikipediaContainerComponent ]
+      declarations: [
+        WikipediaContainerComponent,
+        MockComponent(WikipediaSearchComponent),
+        MockComponent(WikipediaSearchResultsComponent)
+      ]
     })
     .compileComponents();
   }));

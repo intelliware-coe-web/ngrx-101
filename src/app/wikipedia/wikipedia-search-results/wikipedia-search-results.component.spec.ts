@@ -8,7 +8,8 @@ describe('WikipediaSearchResultsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WikipediaSearchResultsComponent ]
+      declarations: [ WikipediaSearchResultsComponent ],
+      imports: []
     })
     .compileComponents();
   }));
