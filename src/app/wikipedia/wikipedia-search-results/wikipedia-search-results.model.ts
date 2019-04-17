@@ -1,4 +1,4 @@
-class WikipediaSearchResults {
+export class WikipediaSearchResults {
   constructor(
     readonly href: URL,
     readonly title: string,
