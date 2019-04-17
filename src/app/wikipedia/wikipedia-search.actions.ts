@@ -2,8 +2,8 @@ import {ActionBlueprint} from '../common/ActionBlueprint';
 import {WikipediaSearch} from './wikipedia-search.model';
 import {WikipediaSearchResults} from './wikipedia-search-results.model';
 
-export type UpdateSearchAction = ActionBlueprint<'UPDATE_SEARCH_ACTION', WikipediaSearch, string>;
-export type UpdateSearchResultsAction = ActionBlueprint<'UPDATE_SEARCH_RESULTS', WikipediaSearch, WikipediaSearchResults[]>;
+type UpdateSearchAction = ActionBlueprint<'UPDATE_SEARCH_ACTION', WikipediaSearch, string>;
+type UpdateSearchResultsAction = ActionBlueprint<'UPDATE_SEARCH_RESULTS', WikipediaSearch, WikipediaSearchResults[]>;
 
 export function updateSearchResultsActionCreator(searchResults: WikipediaSearchResults[]): UpdateSearchResultsAction {
   return {

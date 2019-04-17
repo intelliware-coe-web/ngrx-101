@@ -8,15 +8,24 @@ import {WikipediaContainerComponent} from './wikipedia-container/wikipedia-conta
 import {StoreModule} from '@ngrx/store';
 import {actionReducer} from '../common/ActionReducer';
 import {WikipediaSearch} from './wikipedia-search.model';
+import {WikipediaSearchService} from './wikipedia-effects/wikipedia-search.service';
+import {WikipediaEffects} from './wikipedia-effects/wikipedia.effects';
+import {EffectsModule} from '@ngrx/effects';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatInputModule,
     MatIconModule,
     MatFormFieldModule,
-    StoreModule.forFeature('wikipedia-search', actionReducer, { initialState: new WikipediaSearch()})
+    StoreModule.forFeature('wikipedia-search', actionReducer, { initialState: new WikipediaSearch()}),
+    EffectsModule.forFeature([WikipediaEffects])
+  ],
+  providers: [
+    WikipediaSearchService
   ],
   exports: [
     WikipediaContainerComponent
