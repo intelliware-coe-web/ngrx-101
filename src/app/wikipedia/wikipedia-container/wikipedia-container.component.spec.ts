@@ -4,10 +4,14 @@ import {WikipediaContainerComponent} from './wikipedia-container.component';
 import {MockComponent} from 'ng-mocks';
 import {WikipediaSearchComponent} from '../wikipedia-search/wikipedia-search.component';
 import {WikipediaSearchResultsComponent} from '../wikipedia-search-results/wikipedia-search-results.component';
+import {MockStore, provideMockStore} from '@ngrx/store/testing';
+import {WikipediaSearch} from '../wikipedia-search.model';
+import {Store} from '@ngrx/store';
 
 describe('WikipediaContainerComponent', () => {
   let component: WikipediaContainerComponent;
   let fixture: ComponentFixture<WikipediaContainerComponent>;
+  let store: MockStore<WikipediaSearch>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -15,6 +19,9 @@ describe('WikipediaContainerComponent', () => {
         WikipediaContainerComponent,
         MockComponent(WikipediaSearchComponent),
         MockComponent(WikipediaSearchResultsComponent)
+      ],
+      providers: [
+        provideMockStore<WikipediaSearch>({initialState: new WikipediaSearch()})
       ]
     })
     .compileComponents();
@@ -24,6 +31,8 @@ describe('WikipediaContainerComponent', () => {
     fixture = TestBed.createComponent(WikipediaContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    store = TestBed.get(Store);
   });
 
   it('should create', () => {

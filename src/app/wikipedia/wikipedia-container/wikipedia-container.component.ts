@@ -1,5 +1,6 @@
-import {Component, ViewChild} from '@angular/core';
-import {WikipediaSearchComponent} from '../wikipedia-search/wikipedia-search.component';
+import {Component} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {WikipediaSearch} from '../wikipedia-search.model';
 
 @Component({
   selector: 'app-wikipedia-container',
@@ -18,6 +19,5 @@ import {WikipediaSearchComponent} from '../wikipedia-search/wikipedia-search.com
   ]
 })
 export class WikipediaContainerComponent {
-  @ViewChild(WikipediaSearchComponent)
-  wikipediaSearch: WikipediaSearchComponent;
+  constructor(private readonly store: Store<WikipediaSearch>) {}
 }

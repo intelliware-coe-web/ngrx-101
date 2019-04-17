@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {WikipediaSearchResults} from './wikipedia-search-results.model';
+import {WikipediaSearchResults} from '../wikipedia-search-results.model';
 
 @Component({
   selector: 'app-wikipedia-search-results',
