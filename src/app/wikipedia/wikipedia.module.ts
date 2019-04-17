@@ -4,8 +4,10 @@ import {WikipediaSearchComponent} from './wikipedia-search/wikipedia-search.comp
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {WikipediaSearchResultsComponent} from './wikipedia-search-results/wikipedia-search-results.component';
 import {MatFormFieldModule, MatIconModule, MatInputModule} from '@angular/material';
-import { WikipediaContainerComponent } from './wikipedia-container/wikipedia-container.component';
+import {WikipediaContainerComponent} from './wikipedia-container/wikipedia-container.component';
 import {StoreModule} from '@ngrx/store';
+import {actionReducer} from '../common/ActionReducer';
+import {WikipediaSearch} from './wikipedia-search.model';
 
 @NgModule({
   imports: [
@@ -14,7 +16,7 @@ import {StoreModule} from '@ngrx/store';
     MatInputModule,
     MatIconModule,
     MatFormFieldModule,
-    StoreModule.forFeature('wikipedia-search', {})
+    StoreModule.forFeature('wikipedia-search', actionReducer, { initialState: new WikipediaSearch()})
   ],
   exports: [
     WikipediaContainerComponent
