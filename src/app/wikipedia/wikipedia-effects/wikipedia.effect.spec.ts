@@ -1,0 +1,3 @@
+describe('Wikipedia Effect', () => {
+
+});
